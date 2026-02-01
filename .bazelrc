@@ -1,0 +1,23 @@
+# C++20 standard (Unix)
+build --cxxopt=-std=c++20
+build --host_cxxopt=-std=c++20
+
+# Enable all warnings (Unix)
+build --cxxopt=-Wall
+build --cxxopt=-Wextra
+
+# Platform-specific settings
+build:macos --cxxopt=-stdlib=libc++
+build:macos --linkopt=-stdlib=libc++
+
+# Linux settings
+build:linux --cxxopt=-stdlib=libstdc++
+
+# Windows settings (MSVC)
+build:windows --cxxopt=/std:c++20
+build:windows --host_cxxopt=/std:c++20
+build:windows --cxxopt=/W4
+build:windows --cxxopt=/EHsc
+
+# Test output configuration
+test --test_output=errors

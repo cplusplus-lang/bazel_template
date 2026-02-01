@@ -1,0 +1,10 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")
+
+cc_test(
+    name = "greeting_test",
+    srcs = ["greeting_test.cpp"],
+    deps = [
+        "//src:greeting",
+        "@catch2//:catch2_main",
+    ],
+)
