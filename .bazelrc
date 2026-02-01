@@ -10,8 +10,8 @@ build --cxxopt=-Wextra
 build:macos --cxxopt=-stdlib=libc++
 build:macos --linkopt=-stdlib=libc++
 
-# Linux settings
-build:linux --cxxopt=-stdlib=libstdc++
+# Linux settings (GCC uses libstdc++ by default, no flag needed)
+build:linux --cxxopt=-pedantic
 
 # Windows settings (MSVC)
 build:windows --cxxopt=/std:c++20
